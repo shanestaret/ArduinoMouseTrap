@@ -34,4 +34,4 @@ ________________________________________________________________________________
    * ###### Managed the GitHub and Slack pages
 ________________________________________________________________________________________________________________________________
 
-###### [Slack workspace](https://cis126.slack.com/) we used to communicate
+###### This is a link to the [Slack workspace](https://cis126.slack.com/) we used to communicate throughout this project.
