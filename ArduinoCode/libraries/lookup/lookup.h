@@ -1,0 +1,1 @@
+extern "C" byte encode(byte); // encode is the label in your assembly program to start

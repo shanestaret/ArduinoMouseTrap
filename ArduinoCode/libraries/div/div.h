@@ -1,0 +1,1 @@
+extern "C" div_t div(int, int);    // div is the label in your assembly program to start
