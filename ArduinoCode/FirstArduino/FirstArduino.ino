@@ -4,18 +4,18 @@
 // this constant won't change.  It's the pin number
 // of the sensor's output:
 const int pingPin = 7;
-int counter = 0;
+int counter = 0; // keeps track of how many mice are in the trap
 Servo myservo;  // create servo object to control a servo
-div_t divCM;
-int CM,test;
-long duration;
-int previousMotionState;
+div_t divCM; //holds the final quotient and remainder after duration is passed to "div" library
+int CM; //holds the quotient from divCM
+long duration; //holds how long it took for the wave emitted by the ultrasonic sensor to come back to the sensor
+
 void setup() 
 {
            // initialize serial communication:
            Serial.begin(9600);
            myservo.attach(9);  // attaches the servo on pin 9 to the servo object
-           myservo.write(180);
+           myservo.write(180); //immediately writes the servo to position 180
            Wire.begin();
 }
 void loop() 
@@ -24,7 +24,6 @@ void loop()
            delay(100);
              // establish variables for duration of the ping,
            // and the distance result in inches and centimeters:
-           long cm;
           
              // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
            // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
@@ -41,23 +40,23 @@ void loop()
            pinMode(pingPin, INPUT);
            duration = pulseIn(pingPin, HIGH);
           
-           // convert the time into a distance
+           // convert the time into a distance and print the distance
            divCM = div(int(duration), 29);
            CM = divCM.quot;
            divCM = div(CM, 2);
            CM = divCM.quot;
-           test = duration/29/2;
-           Serial.print(test);
-           Serial.print(" ");
            Serial.print(CM);
            Serial.print("cm");
            Serial.println();
           
            delay(100);
           
+           //if the distance sensor is sensing that there is something within 6 centimeters
            if(CM < 6 && CM >= 0) {
-                  myservo.write(90); //servo goes to 90 degree
-                  delay(10000);
+                  myservo.write(90); //servo goes to 90 degree, dropping the trap door
+                  delay(2000); //wait 2 seconds to ensure that the mouse actually falls in
+                      
+                  //send out a pulse with the distance sensor again to check if something is still above the trap door
                   pinMode(pingPin, OUTPUT);
                   digitalWrite(pingPin, LOW);
                   delayMicroseconds(2);
@@ -77,17 +76,22 @@ void loop()
                   Serial.print("cm");
                   Serial.println();
                    
+                    //if there is not something above the trap door, then the mouse was caught
                     if(CM >=6){
                     counter = counter + 1; //add 1 to the counter
                       Serial.println("Mouse has been trapped");
                       Serial.print("Number of mouse trapped so far ");
                       Serial.println(counter);
+                               
+                        //if there are five rodents or more
                         if(counter >= 5){
                           Serial.println("Too many mice in box");          
                         }
                     } 
+           }
            
-           }else{
+           //if there is not something above the trap door, don't drop it
+           else{
                     delay(3000);
                     delay(100);
                     myservo.write(180);
