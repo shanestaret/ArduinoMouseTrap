@@ -1,15 +1,15 @@
 #include <div.h>
 #include <Servo.h>
 #include <Wire.h>
-// this constant won't change.  It's the pin number
-// of the sensor's output:
-const int pingPin = 7;
+
+const int pingPin = 7; // this constant won't change.  It's the pin number of the sensor's output
 byte bait; //the bait that is being used to lure the rodents
 int counter = 0; // keeps track of how many mice are in the trap
 Servo myservo;  // create servo object to control a servo
 div_t divCM; //holds the final quotient and remainder after duration is passed to "div" library
 int CM; //holds the quotient from divCM
 long duration; //holds how long it took for the wave emitted by the ultrasonic sensor to come back to the sensor
+
 void setup() 
 {
            // initialize serial communication:
@@ -18,6 +18,7 @@ void setup()
            myservo.write(180); //immediately writes the servo to position 180
            Wire.begin();
 }
+
 void loop() 
 {
   
@@ -53,7 +54,7 @@ void loop()
           
            delay(100);
           
-           //if the distance sensor is sensing that there is something within 6 centimeters
+           //if the distance sensor is sensing that there is something within 7 centimeters
            if(CM < 7 && CM >= 0) {
                   myservo.write(90); //servo goes to 90 degree, dropping the trap door
                   delay(2000); //wait 2 seconds to ensure that the mouse actually falls in
@@ -67,10 +68,12 @@ void loop()
                   digitalWrite(pingPin, LOW);
                   pinMode(pingPin, INPUT);
                   duration = pulseIn(pingPin, HIGH);
+                      
                   divCM = div(int(duration), 29);
                   CM = divCM.quot;
                   divCM = div(CM, 2);
                   CM = divCM.quot;
+                      
                   Serial.print(CM);
                   Serial.print("cm");
                   Serial.println();
