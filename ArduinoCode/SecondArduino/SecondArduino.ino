@@ -13,19 +13,19 @@ void setup() {
   for(int i = 0; i < 3; i++) { //default values for counters should be 0
     baitCounter[i] = 0;
   }
-  //will add below code when arduino-to-arduino connection is ready
-  // Wire.begin();
+  Wire.begin(8);
+  Wire.onReceive(receiveEvent);
   Serial.begin(9600);
 }
 
 void loop() {
-  //will add below code when arduino-to-arduino connection is ready
-  /* if(Wire.available()) {
-    baitUsed = (byte)Wire.read();
-    */
+	//useless method for our purposes
+}
 
-    //randomizes the bait used; will be removed once arduino-to-arduino connection is ready
-    baitUsed = random(0, 4);
+void receiveEvent(byte b) {
+  if(Wire.available() >= 1) {
+    baitUsed = (byte)Wire.read();
+    delay(100);
   
   //if it is the first time through the loop, set up the cheese counter memory address so that it starts at 0
   if(firstTime) {
@@ -40,8 +40,8 @@ void loop() {
     }
     numOfResets++; //increment reset counter
     Serial.println("Bait counter has been reset.");
-	  Serial.print("Total Number of Times Reset: ");
-	  Serial.println(numOfResets);
+    Serial.print("Total Number of Times Reset: ");
+    Serial.println(numOfResets);
     Serial.println("-----------------------------");
   }
   
@@ -57,8 +57,5 @@ void loop() {
     Serial.println("-----------------------------");
   }
   
-  delay(3000);
-  
   }
-  
-//uncomment this when arduino-to-arduino connection is established }
+}
