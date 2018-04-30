@@ -23,11 +23,11 @@ void loop()
 {
   
            delay(100);
+           
+           //for our simulation, we will just randomly choose what bait is used each time
            bait = random(0,4);
-             // establish variables for duration of the ping,
-           // and the distance result in inches and centimeters:
           
-             // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
+           // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
            // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
            pinMode(pingPin, OUTPUT);
            digitalWrite(pingPin, LOW);
@@ -42,11 +42,13 @@ void loop()
            pinMode(pingPin, INPUT);
            duration = pulseIn(pingPin, HIGH);
           
-           // convert the time into a distance and print the distance
+           // convert the time into a distance and print the distance of the closest object
            divCM = div(int(duration), 29);
            CM = divCM.quot;
            divCM = div(CM, 2);
            CM = divCM.quot;
+           
+           //print the distance of the closest object
            Serial.print("Closest object: ");
            Serial.print(CM);
            Serial.print("cm");
@@ -55,7 +57,8 @@ void loop()
            delay(100);
           
            //if the distance sensor is sensing that there is something within 7 centimeters
-           if(CM < 7 && CM >= 0) {
+           if(CM < 7 && CM >= 0)
+           {
                   myservo.write(90); //servo goes to 90 degree, dropping the trap door
                   delay(2000); //wait 2 seconds to ensure that the mouse actually falls in
                       
@@ -79,17 +82,21 @@ void loop()
                   Serial.println();
                    
                     //if there is not something above the trap door, then the mouse was caught
-                    if(CM >=7){
-                    counter = counter + 1; //add 1 to the counter
+                    if(CM >=7)
+                    {
+                      counter = counter + 1; //add 1 to the counter
                       Serial.println("Mouse has been trapped");
                       Serial.print("Number of mouse trapped so far ");
                       Serial.println(counter);
+                               
+                      //send the kind of bait that was used to trap the mouse to the Second Arduino
                       Wire.beginTransmission(8);
                       Wire.write(bait);
                       Wire.endTransmission();
                                
-                        //if there are five rodents or more
-                        if(counter >= 5){
+                        //if there are five rodents or more now captured
+                        if(counter >= 5)
+                        {
                           Serial.println("Too many mice in box");
                           delay(1000);
                           Serial.println("Emptying box...");
@@ -101,7 +108,8 @@ void loop()
            }
            
            //if there is not something above the trap door, don't drop it
-           else{
+           else
+           {
                     delay(100);
                     myservo.write(180);
                     delay(100); 
