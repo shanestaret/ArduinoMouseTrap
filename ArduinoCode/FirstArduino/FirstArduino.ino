@@ -4,12 +4,12 @@
 // this constant won't change.  It's the pin number
 // of the sensor's output:
 const int pingPin = 7;
+byte bait; //the bait that is being used to lure the rodents
 int counter = 0; // keeps track of how many mice are in the trap
 Servo myservo;  // create servo object to control a servo
 div_t divCM; //holds the final quotient and remainder after duration is passed to "div" library
 int CM; //holds the quotient from divCM
 long duration; //holds how long it took for the wave emitted by the ultrasonic sensor to come back to the sensor
-
 void setup() 
 {
            // initialize serial communication:
@@ -22,6 +22,7 @@ void loop()
 {
   
            delay(100);
+           bait = random(0,4);
              // establish variables for duration of the ping,
            // and the distance result in inches and centimeters:
           
@@ -45,6 +46,7 @@ void loop()
            CM = divCM.quot;
            divCM = div(CM, 2);
            CM = divCM.quot;
+           Serial.print("Closest object: ");
            Serial.print(CM);
            Serial.print("cm");
            Serial.println();
@@ -52,7 +54,7 @@ void loop()
            delay(100);
           
            //if the distance sensor is sensing that there is something within 6 centimeters
-           if(CM < 6 && CM >= 0) {
+           if(CM < 7 && CM >= 0) {
                   myservo.write(90); //servo goes to 90 degree, dropping the trap door
                   delay(2000); //wait 2 seconds to ensure that the mouse actually falls in
                       
@@ -69,34 +71,37 @@ void loop()
                   CM = divCM.quot;
                   divCM = div(CM, 2);
                   CM = divCM.quot;
-                  test = duration/29/2;
-                  Serial.print(test);
-                  Serial.print(" ");
                   Serial.print(CM);
                   Serial.print("cm");
                   Serial.println();
                    
                     //if there is not something above the trap door, then the mouse was caught
-                    if(CM >=6){
+                    if(CM >=7){
                     counter = counter + 1; //add 1 to the counter
                       Serial.println("Mouse has been trapped");
                       Serial.print("Number of mouse trapped so far ");
                       Serial.println(counter);
+                      Wire.beginTransmission(8);
+                      Wire.write(bait);
+                      Wire.endTransmission();
                                
                         //if there are five rodents or more
                         if(counter >= 5){
-                          Serial.println("Too many mice in box");          
+                          Serial.println("Too many mice in box");
+                          delay(1000);
+                          Serial.println("Emptying box...");
+                          delay(1000);
+                          Serial.println("Box Emptied");
+                          counter = 0;
                         }
                     } 
            }
            
            //if there is not something above the trap door, don't drop it
            else{
-                    delay(3000);
                     delay(100);
                     myservo.write(180);
                     delay(100); 
            }
-           Wire.write(bait);
            
 }
