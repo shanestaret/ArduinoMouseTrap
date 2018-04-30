@@ -61,17 +61,19 @@ void receiveEvent(byte b)
     		Serial.println("-----------------------------");
 	}
   
-  else {
-    baitCounter[baitUsed] = encode(baitUsed); //use assembly code to determine what bait should be incremented
-    Serial.println("Bait counter stats:");
-    Serial.print("Peanut Butter: ");
-    Serial.println(baitCounter[0]);
-    Serial.print("Beef Jerky: ");
-    Serial.println(baitCounter[1]);
-    Serial.print("Cheese: ");
-    Serial.println(baitCounter[2]);
-    Serial.println("-----------------------------");
-  }
+  	//if bait used does not indicate a reset
+	else
+  	{
+    		baitCounter[baitUsed] = encode(baitUsed); //use assembly code to determine what bait should be incremented
+    		Serial.println("Bait counter stats:");
+    		Serial.print("Peanut Butter: ");
+    		Serial.println(baitCounter[0]);
+    		Serial.print("Beef Jerky: ");
+    		Serial.println(baitCounter[1]);
+    		Serial.print("Cheese: ");
+    		Serial.println(baitCounter[2]);
+    		Serial.println("-----------------------------");
+  	}
   
   }
 }
