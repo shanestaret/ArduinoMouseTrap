@@ -34,4 +34,5 @@ ________________________________________________________________________________
    * ###### Managed the GitHub and Slack pages
 ________________________________________________________________________________________________________________________________
 
+#### This is a link to [my YouTube channel](https://www.youtube.com/channel/UCmQA16swmtPa29pRo9YtRTA?view_as=subscriber), featuring videos of this project on it.
 #### This is a link to the [Slack workspace](https://cis126.slack.com/) we used to communicate throughout this project.
