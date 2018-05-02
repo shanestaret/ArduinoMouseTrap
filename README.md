@@ -20,7 +20,7 @@ ________________________________________________________________________________
    
 ## **C/C++ Programmer: Trush Patel**
    * ###### Did a majority of the assembly of the sensors and wires for the Arduinos
-   * ###### Created code allowing servo and LED to operate effectively
+   * ###### Created code allowing servo to operate effectively
    * ###### Helped troubleshoot issues with the C/C++ code
    * ###### Contributed ideas to the design of the mouse trap
    * ###### Captured useful pictures during the creation of this project
@@ -28,7 +28,7 @@ ________________________________________________________________________________
    
 ## **C/C++/Assembly Programmer: Shane Staret**
    * ###### Did all of the Assembly code and helped with the C/C++ code
-   * ###### Created code allowing distance sensor to operate effectively
+   * ###### Created code allowing distance sensor and LED to operate effectively
    * ###### Troubleshooted issues with C/C++/Assembly Code
    * ###### Contributed ideas to the design of the mouse trap
    * ###### Managed the GitHub and Slack pages
