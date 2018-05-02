@@ -3,6 +3,7 @@
 #include <Wire.h>
 
 const int pingPin = 7; // this constant won't change.  It's the pin number of the sensor's output
+const int ledPin = 5; //this constant won't change. It's the pin number of the LED
 byte bait; //the bait that is being used to lure the rodents
 int counter = 0; // keeps track of how many mice are in the trap
 Servo myservo;  // create servo object to control a servo
@@ -12,6 +13,7 @@ long duration; //holds how long it took for the wave emitted by the ultrasonic s
 
 void setup() 
 {
+           pinMode(ledPin, OUTPUT); //configures output pin for the LED
            // initialize serial communication:
            Serial.begin(9600);
            myservo.attach(9);  // attaches the servo on pin 9 to the servo object
@@ -86,7 +88,7 @@ void loop()
                     {
                       counter = counter + 1; //add 1 to the counter
                       Serial.println("Mouse has been trapped");
-                      Serial.print("Number of mouse trapped so far ");
+                      Serial.print("Number of rodents trapped so far ");
                       Serial.println(counter);
                                
                       //send the kind of bait that was used to trap the mouse to the Second Arduino
@@ -97,12 +99,14 @@ void loop()
                         //if there are five rodents or more now captured
                         if(counter >= 5)
                         {
+                          digitalWrite(ledPin, HIGH); //turning on LED
                           Serial.println("Too many mice in box");
                           delay(1000);
-                          Serial.println("Emptying box...");
+                          Serial.println("Emptying box..."); //simulating a user emptying the box
                           delay(1000);
                           Serial.println("Box Emptied");
                           counter = 0;
+                          digitalWrite(ledPIN, LOW); //turning LED off
                         }
                     } 
            }
