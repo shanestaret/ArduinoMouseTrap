@@ -88,7 +88,7 @@ void loop()
                     {
                       counter = counter + 1; //add 1 to the counter
                       Serial.println("Mouse has been trapped");
-                      Serial.print("Number of rodents trapped so far ");
+                      Serial.print("Number of rodents trapped so far: ");
                       Serial.println(counter);
                                
                       //send the kind of bait that was used to trap the mouse to the Second Arduino
