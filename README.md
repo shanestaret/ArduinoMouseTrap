@@ -1,5 +1,7 @@
 # Arduino Mouse Trap
 ###### Official CIS126 (Computer Architecture & Organization) Final Project by [Shane Staret](https://github.com/SStaret43), [Trush Patel](https://github.com/trushpatel1997), and [Chris Miller](https://github.com/chrism186). This project was created through the use of Arduino and Assembly (using Microsoft Visual Studio and the AVR Assembler).
+#### This is a link to [my YouTube channel](https://www.youtube.com/channel/UCmQA16swmtPa29pRo9YtRTA?view_as=subscriber), featuring videos of this project on it. Here is a [video of the prototype in action](https://www.youtube.com/watch?v=mKeBMHQoORo) (without the hallway so you can actually see what's going on)
+#### This is a link to the [Slack workspace](https://cis126.slack.com/) we used to communicate throughout this project. Click [here](https://join.slack.com/t/cis126/shared_invite/enQtMzU2OTYwMTgxMjUzLTQwMGU0OGM1ODQ2YTg3YmNjYTE4YzJhMWVmMTQ0MTE4M2Q4ZmMxZDFlNGI0YTQ1NTBhYjJmODYxOTc2MDY4ZmU) to join it and view what we said and did!
 ###### *We'd like to thank [Professor Robert Moyer](http://faculty.mc3.edu/rmoyer/) for helping us throughout this project.*
 ________________________________________________________________________________________________________________________________
 
