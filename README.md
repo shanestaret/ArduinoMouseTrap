@@ -27,12 +27,8 @@ ________________________________________________________________________________
    
    
 ## **C/C++/Assembly Programmer: Shane Staret**
-   * ###### Did all of the Assembly code and helped with the C/C++ code
+   * ###### Did all of the Assembly code and a majority of the C/C++ code
    * ###### Created code allowing distance sensor and LED to operate effectively
    * ###### Troubleshooted issues with C/C++/Assembly Code
    * ###### Contributed ideas to the design of the mouse trap
    * ###### Managed the GitHub and Slack pages
-________________________________________________________________________________________________________________________________
-
-#### This is a link to [my YouTube channel](https://www.youtube.com/channel/UCmQA16swmtPa29pRo9YtRTA?view_as=subscriber), featuring videos of this project on it.
-#### This is a link to the [Slack workspace](https://cis126.slack.com/) we used to communicate throughout this project. Click [here](https://join.slack.com/t/cis126/shared_invite/enQtMzU2OTYwMTgxMjUzLTQwMGU0OGM1ODQ2YTg3YmNjYTE4YzJhMWVmMTQ0MTE4M2Q4ZmMxZDFlNGI0YTQ1NTBhYjJmODYxOTc2MDY4ZmU) to join it and view what we said and did!
