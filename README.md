@@ -41,5 +41,5 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________
 
 ## **Pictures**
-![GIF showing prototype in action without the hallway](https://media.giphy.com/media/8ZbIYxbTEVhzlEFw3f/giphy.gif)
+![GIF showing prototype in action without the hallway](https://media.giphy.com/media/jyAY8YrPZra2KMnLH3/giphy.gif)
 ![Picture of prototype with arrows pointing to certain parts of the prototype](Pictures/MouseTrapPrototype.png)
