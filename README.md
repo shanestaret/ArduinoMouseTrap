@@ -37,4 +37,4 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________
 
 ## **Pictures**
-![Picture of prototype with arrows pointing to certain parts of the prototype]()
+![Picture of prototype with arrows pointing to certain parts of the prototype](Pictures/MouseTrapPrototype.png)
