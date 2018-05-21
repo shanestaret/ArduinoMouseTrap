@@ -47,6 +47,9 @@ ________________________________________________________________________________
 #### Our finalized design concept
 ![Initial design concept diagram](Pictures/FinalDiagram.png)
 
+#### A picture of the servo and distance sensor connected to a single breadboard so both are dependent on one another
+![Picture of breadboarding for servo/distance sensor](Pictures/Servo&DistSensorConnected.jpg)
+
 #### A picture of the final prototype (without the hallway) with text and arrows pointing to the important components of the prototype.
 ![Picture of prototype with arrows pointing to certain parts of the prototype](Pictures/MouseTrapPrototype.png)
 
