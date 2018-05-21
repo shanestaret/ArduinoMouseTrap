@@ -34,3 +34,7 @@ ________________________________________________________________________________
    * ###### Troubleshooted issues with C/C++/Assembly Code
    * ###### Contributed ideas to the design of the mouse trap
    * ###### Managed the GitHub and Slack pages
+________________________________________________________________________________________________________________________________
+
+## **Pictures**
+![Picture of prototype with arrows pointing to certain parts of the prototype]()
