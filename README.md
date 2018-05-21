@@ -41,6 +41,6 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________
 
 ## **Pictures**
-![GIF of prototype in action without hallway](https://imgflip.com/gif/2aqdif)
+![GIF of prototype in action without hallway](Pictures/TrapInAction.gif)
 
 ![Picture of prototype with arrows pointing to certain parts of the prototype](Pictures/MouseTrapPrototype.png)
