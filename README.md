@@ -41,6 +41,6 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________
 
 ## **Pictures**
-![GIF of prototype in action without hallway](http://www.sheawong.com/wp-content/uploads/2013/08/keephatin.gif)
+![GIF of prototype in action without hallway](blob:https://giphy.com/5568e94e-d43b-451c-bed8-e70469e6746e)
 
 ![Picture of prototype with arrows pointing to certain parts of the prototype](Pictures/MouseTrapPrototype.png)
