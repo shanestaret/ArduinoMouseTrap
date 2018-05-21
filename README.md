@@ -14,7 +14,9 @@ ________________________________________________________________________________
 #### The vast majority of our code was created within the Arduino IDE, using C and C++. The code in the Arduino IDE allowed us to connect the two Arduinos together and stored all variables that we needed. The Arduino code also controlled the movement of the servo and the lighting up of the LED. Some of our code was created in Assembly using the AVR Assembler. We created a Lookup table within assembly with data spaces that kept track of how many times a mouse was caught using a specific bait. We also changed the values of the Lookup table within our Assembly code. The data spaces were then referenced in the Arduino code so they could be printed on the console to show what baits were most effective. The Assembly code was also responsible for converting the output of the distance sensor from microseconds to centimeters. Unfortunately, the distance sensor we used only output the amount of time that passed between its initial signal and the rebounded signal it received. This was not useful to us, as we needed to know the distance between the mouse and the sensor, so we used Assembly to convert from microseconds to centimeters.
 ________________________________________________________________________________________________________________________________
 
-## **Engineer: Chris Miller**
+## **The Squad**
+
+### **Engineer: Chris Miller**
    * ###### built the *entirety* of the mouse trap contraption
    * ###### lead designer of the mouse trap
    * ###### helped assemble the sensors on the Arduino and helped wire the Arduinos
@@ -22,7 +24,7 @@ ________________________________________________________________________________
    * ###### Captured useful pictures during the creation of this project
 
    
-## **C/C++ Programmer: Trush Patel**
+### **C/C++ Programmer: Trush Patel**
    * ###### Did a majority of the assembly of the sensors and wires for the Arduinos
    * ###### Created code allowing servo to operate effectively
    * ###### Helped troubleshoot issues with the C/C++ code
@@ -30,7 +32,7 @@ ________________________________________________________________________________
    * ###### Captured useful pictures during the creation of this project
    
    
-## **C/C++/Assembly Programmer: Shane Staret**
+### **C/C++/Assembly Programmer: Shane Staret**
    * ###### Did all of the Assembly code and a majority of the C/C++ code
    * ###### Created code allowing distance sensor and LED to operate effectively
    * ###### Troubleshooted issues with C/C++/Assembly Code
