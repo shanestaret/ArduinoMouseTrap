@@ -42,7 +42,7 @@ ________________________________________________________________________________
 
 ## **Pictures**
 
-#### A picture of the prototype with text and arrows pointing to the important components of the prototype.
+#### A picture of the prototype (without the hallway) with text and arrows pointing to the important components of the prototype.
 ![Picture of prototype with arrows pointing to certain parts of the prototype](Pictures/MouseTrapPrototype.png)
 
 #### The GIF below shows the prototype in action without the hallway on top so it is easier to see what is going on. Essentially what happens is that as the fake mouse reaches the trapdoor, the distance sensor recognizes that something is close by, prompting the servo to drop the trapdoor and capture the mouse.
